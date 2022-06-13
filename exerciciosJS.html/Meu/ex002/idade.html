@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <style>
+        body{
+            font: normal 1em Arial, Helvetica;
+            background-color: rgba(0, 0, 255, 0.541);
+            
+            
+        }
+        
+        h1,
+        footer{
+            color: white;
+            text-align: center;
+        }
+
+        section{
+            width: 400px;
+            height: auto;
+            background-color: white;
+            line-height: 40px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.438);
+            
+        }
+
+        section p{
+            margin: 0;
+            
+        }
+
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            
+        }
+
+        img[src=""]{
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    
+    <section>
+        Ano de nascimento: <input type="number" name="txtidade" id="txtidade"> <br>
+            
+        Sexo: <input type="radio" name="c" id="m" value="masculino" checked> Masculino
+        <input type="radio" name="c" id="f" value="feminino"> Feminino <br>
+        <input type="button" value="Verificar" onclick="verificar()">
+            
+        <div>
+            <p id="res"></p>
+            <center><img id="imagem" src="" alt=""></center>
+         </div>
+    </section>
+
+
+    <footer>
+        <p>@Cursoemvideo</p>
+    </footer>
+
+    <script>
+        var agora = new Date()
+        var ano = agora.getFullYear()
+        var res = window.document.getElementById("res")
+        res.innerHTML = "Preenchar os dados acima para ver o resultado!"
+        
+
+
+        function verificar(){
+            var txtnasc = window.document.getElementById("txtidade")
+            var nasc = Number(txtnasc.value)
+            var idade = ano - nasc
+
+
+            if (window.document.getElementById("m").checked)
+                if (idade >= 0 && idade <= 2){
+                    res.innerHTML = `<center> Detectamos Homem com ${idade} anos </center>`
+                    window.document.getElementById("imagem").src = "images/homem-bebe.jpg"
+
+                }else if (idade < 13){
+                    res.innerHTML = `<center>Detectamos Homem com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/homem-criança.jpg"
+
+                }else if (idade < 18){
+                    res.innerHTML = `<center>Detectamos Homem com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/homem-adolescente.jpg"
+
+                }else if (idade < 46){
+                    res.innerHTML = `<center>Detectamos Homem com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/homem-adulto.jpg"
+
+                }else if (idade < 65){
+                    res.innerHTML = `<center>Detectamos Homem com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/homem-meioidade.jpg"
+
+                }else if (idade >= 65 && idade <= 122){
+                    res.innerHTML = `<center>Detectamos Homem com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/homem-idoso.jpg"
+
+                }else{
+                    alert("[Erro] Data inválida! Tente novamente.")
+                    res.innerHTML = "Preenchar os dados acima para ver o resultado!"
+                    window.document.getElementById("imagem").src = ""
+                }if (nasc > ano){
+                    res.innerHTML = "Preenchar os dados acima para ver o resultado!"
+                    alert("[Erro] Data inválida! Tente novamente.")
+                    window.document.getElementById("imagem").src = ""
+                }
+
+            if (window.document.getElementById("f").checked){
+                if (idade >= 0 && idade <= 2){
+                    res.innerHTML = `<center>Detectamos mulher com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/mulher-bebe.jpg"
+
+                }else if (idade < 13){
+                    res.innerHTML = `<center>Detectamos mulher com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/mulher-criança.jpg"
+
+                }else if (idade < 18){
+                    res.innerHTML = `<center>Detectamos mulher com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/mulher-adolescente.jpg"
+
+                }else if (idade < 46){
+                    res.innerHTML = `<center>Detectamos mulher com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/mulher-adulta.jpg"
+
+                }else if (idade < 65){
+                    res.innerHTML = `<center>Detectamos mulher com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/mulher-meiaidade.jpg"
+
+                }else if (idade >= 65 && idade <= 122){
+                    res.innerHTML = `<center>Detectamos mulher com ${idade} anos</center>`
+                    window.document.getElementById("imagem").src = "images/mulher-idosa.jpg"
+
+                }else{
+                    alert("[Erro] Data inválida! Tente novamente.")
+                    res.innerHTML = "Preenchar os dados acima para ver o resultado!"
+                    window.document.getElementById("imagem").src = ""
+                }if (nasc > ano){
+                    res.innerHTML = "Preenchar os dados acima para ver o resultado!"
+                    window.document.getElementById("imagem").src = ""
+                }
+            }
+                
+                        
+            }
+
+    </script>
+    
+</body>
+</html>

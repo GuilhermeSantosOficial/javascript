@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <style>
+        body{
+            font: normal 1em Arial, Helvetica;
+            background-color: #ffffff;
+            text-align: center;
+
+        }
+
+        h1{
+            color: white;
+        }
+
+        section{
+            width: 500px;
+            height: 300px;
+            background-color: white;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.342);
+        }
+
+        div > p{
+            padding-top: 20px;
+        }
+
+        div > img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            
+            
+        }
+
+        footer{
+            text-align: center;
+            color: white;
+            font-size: 1em;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+
+    <section id="meio">
+        <div>
+            <p id="parag"></p>
+        </div>
+        <div>
+            <img id="foto" src="" alt="">
+        </div>
+        
+        
+    </section>
+
+    <footer>
+        <p>@Cursoemvideo</p>
+    </footer>
+
+    <script>
+        var p = window.document.querySelector("p#parag")
+        var foto = window.document.getElementById("foto")
+        var agora = new Date()
+        var hora = agora.getHours()
+        p.innerHTML = `Agora são ${hora} horas.`
+
+        if (hora >= 0 && hora < 5){
+            window.document.body.style.backgroundColor = "#1a1818"
+            window.document.getElementById("foto").src="images/img-madrugada.jpg"
+           
+        }else if (hora < 12){
+            window.document.body.style.backgroundColor = "#e0d56f"
+            window.document.getElementById("foto").src = "images/img-manha.jpg"
+
+        }else if (hora < 19){
+            window.document.body.style.backgroundColor = "#b3893d"
+            window.document.getElementById("foto").src = "images/img-tarde.jpg"
+
+        }else if (hora < 24){
+            window.document.body.style.backgroundColor = "#3f3e3c"
+            window.document.getElementById("foto").src = "images/img-noite.jpg"
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste de array</title>
+
+    <style>
+        body{
+            font: normal 1em Arial, Helvetica;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Adicione números de 1 até 100</h1>
+    <p>
+        <input type="number" name="txtnum" id="txtnum">
+        <input type="button" value="adicionar" onclick="add()"
+        >
+    </p>
+    <p><input type="button" value="finalizar" onclick="fim()"></p>
+
+    <div id="res">resposta aq</div>
+    <div id="ress">Total</div>
+
+    <script>
+        function add([n]){
+            var res = window.document.getElementById("res")
+            var txtnum = window.document.getElementById("txtnum")
+            var num = txtnum.value
+
+            return `<p>Valor ${num} adicionado</p>`
+        }
+
+        function fim(){
+
+        }
+    </script>
+    
+</body>
+</html>

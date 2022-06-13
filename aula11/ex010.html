@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+
+    <input type="number" name="txtvel" id="txtvel">
+    <input type="button" value="Calcular" onclick="calc()">
+
+    <div id="res">Resultado aqui...</div>
+
+
+
+
+    <script>
+
+        function calc(){
+            var veltv = window.document.getElementById("txtvel")
+            var veln = Number(veltv.value)
+            var res = window.document.querySelector("div#res")
+            if (veln > 60){
+                res.innerHTML = "Você ultrapassou o limite de velocidade. MULTADO"
+            }else {
+                res.innerHTML = "Sempre use cinto de segurança!"
+            }
+            
+        }
+
+        // var vel = window.prompt("Qual a sua velocidade atual?:")
+        // window.alert(`A velocidade do seu carro é ${vel}Km/h`)
+        // if (vel > 60){
+        //     window.alert("Você ultrapassou a velocidade permitida. MULTADO!")
+        // }
+        // window.alert("Sempre use o cinto de segurança")
+
+
+    </script>
+    
+</body>
+</html>

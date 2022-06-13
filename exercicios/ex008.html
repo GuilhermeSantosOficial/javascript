@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números em JS</title>
+    <style>
+        body{
+            font: normal 1em Arial, Helvetica;
+        }
+
+        input{
+            padding: 30px;
+            font-size: 1em;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Vários cálculos em JS</h1>
+        <input type="button" value="Clique para calcular" onclick="calc()">
+    </div>
+    <div id="res3">
+        <p id="res"></p>
+        <p id="res2"></p>
+    </div>
+
+    <script>
+        var res = window.document.getElementById("res")
+        var res2 = window.document.getElementById("res2")
+        res.innerHTML = `O resultado vai aparecer aqui...`
+        function calc(){
+            res.innerHTML = ""
+            var num = window.prompt("Digite um número:")
+            
+            res.innerHTML += `<p>O número a ser analisado aqui será o <strong>${num}</strong><br></p>`
+            res.innerHTML += "<p><hr></p>"
+            res.innerHTML += `O seu valor absoluto é ` + Math.abs(num) + `<br><br>`
+            res.innerHTML += `A sua parte inteira é ${Number.parseInt(num)}<br><br>`
+            res.innerHTML += `O valor inteiro mais próximo é ` + Math.round(num) + `<br>`
+            res.innerHTML += `<p>A sua raiz quadrada é ${num**(1/2)}</p>`
+            res.innerHTML += `<p>A sua raiz cúbida é ${num**(1/3)}</p>`
+            res.innerHTML += `<p>O valor de ${num}<sup>2</sup> é ${num**2}</p>`
+            res.innerHTML += `<p>O valor de ${num}<sup>3</sup> é ${num**3}</p>`
+
+
+        }
+    </script>
+    
+</body>
+</html>
